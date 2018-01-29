@@ -1,0 +1,128 @@
+[
+    {
+        "user1": "TGuoW",
+        "user1ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "user2": "王玛丽",
+        "user2ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "history": [
+            {
+                "status": "send",
+                "time": "sdja",
+                "text": "王爱上了肯德基阿斯利康的"
+            },
+            {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            }
+        ]
+    },
+    {
+        "user1": "TGuoW",
+        "user1ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "user2": "张玛丽",
+        "user2ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "history": [
+            {
+                "status": "send",
+                "time": "sdja",
+                "text": "张爱上了肯德基阿斯利康的"
+            },
+            {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿的saasdasddasd"
+            }
+        ]
+    },
+    {
+        "user1": "TGuoW",
+        "user1ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "user2": "李玛丽",
+        "user2ImgUrl": "http://img2.imgtn.bdimg.com/it/u=1881776517,987084327&fm=214&gp=0.jpg",
+        "history": [
+            {
+                "status": "send",
+                "time": "sdja",
+                "text": "李爱上了肯德基阿斯利康的"
+            },
+            {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "recieve",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            },        {
+                "status": "send",
+                "time": "sdja",
+                "text": "爱上了肯德基阿斯利康的"
+            }
+        ]
+    }
+]
