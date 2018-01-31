@@ -29,8 +29,10 @@
         </div>
       </div>
 
-      <div id="edit-information">
-        <div id="title">个人信息</div>
+      <div id="edit-information"> 
+        <div id="title">个人信息
+          <span class="close" id="close"></span>
+        </div>
         <div id="userID">000003</div>
       </div>
 
@@ -38,7 +40,6 @@
         <div id="header">
           <span id="userName-contact-now">userName</span>
           <span id='signUp'>注销</span>
-          <span id='logIn'>登录</span>
         </div>
         <div id="history">
           <ul id="list">
@@ -72,9 +73,35 @@
           </div>
         </div>
         <div id="message">
-          <!-- <input type="text" name="userName" id="userName" placeholder="请输入用户名">
-          <input type="password" name="userName" id="password" placeholder="请输入密码"> -->
-          <!-- <button id="login">登录</button> -->
+          <form id ="login-form">
+            <input id="lUserName" class="inputMsg" type="text" placeholder = '请输入用户名'>
+            <input id="lPassword" class="inputMsg" type="password" placeholder = '请输入密码'>
+            <button type="button" id="login" class="log-btn">登录</button>
+          </form>
+          <form id ='register-form' action="">
+            <input id="rUserName" class="inputMsg" type="text" placeholder = '请输入用户名'>
+            <div class="sex">
+              <div class="select">
+                <div class="male">
+                  <label for="male">                        
+                    <input type="radio" name="sex" id="male" checked>
+                  </label>
+                  <span class="btn active">男</span>
+                </div>
+                <div class="female">
+                  <label for="female">
+                    <input type="radio" name="sex" id="female">
+                  </label>
+                  <span class="btn">女</span>
+                </div>                    
+              </div>         
+            </div>
+            <input id="rPassword" class="inputMsg" type="password" placeholder = '请输入密码'>
+            <br/>
+            生日
+            <input id="bornTime" class="inputdate" type="date">
+            <button type="button" id="register" class="log-btn">注册</button>
+          </form>
         </div>
       </div>
     </div>

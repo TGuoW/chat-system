@@ -92,6 +92,9 @@ const getContact = function () {
       dataType: 'json',
       success: function (msg) {
         console.log(msg)
+        document.getElementById('contact').innerHTML = ''
+        let ul = document.createElement('ul')
+        document.getElementById('contact').appendChild(ul)
         for (let o in msg) {
           createContactEle(msg[o])
         }
@@ -102,10 +105,6 @@ const getContact = function () {
     })
   })
 }
-
-$('#signUp').click(function () {
-  getMsg()
-})
 
 function getMsg () {
   $.ajax({

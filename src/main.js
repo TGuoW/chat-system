@@ -1,6 +1,7 @@
 import './page/css/index.scss'
 import index from './page/js/index'
 import './static/HYQiHeiX1-55W.ttf'
+import confirm from './page/js/confirm'
 import $ from 'jquery'
 
 $(function () {
@@ -9,74 +10,37 @@ $(function () {
   })
   let bg = document.createElement('div')
   bg.className = 'logIn-bg'
-  bg.onclick = function () {
-    $('#log').css('display', 'none')
-    $('#edit-information').css('display', 'none')
-    $('.logIn-bg').css('display', 'none')
-  }
   $('#app').append(bg)
+  $('#loginText').addClass('active-tab')
+  showLogin(true)
 })
 
-function createLogin () {
-  let lUserNameInput = document.createElement('input')
-  let lPasswordInput = document.createElement('input')
-  let loginBtn = document.createElement('button')
-  lUserNameInput.id = 'lUserName'
-  lUserNameInput.className = 'inputMsg'
-  lUserNameInput.name = 'lUserName'
-  lUserNameInput.placeholder = '请输入用户名'
-  lPasswordInput.id = 'lPassword'
-  lPasswordInput.className = 'inputMsg'
-  lPasswordInput.name = 'lPassword'
-  lPasswordInput.placeholder = '请输入密码'
-  loginBtn.id = 'login'
-  loginBtn.className = 'log-btn'
-  loginBtn.innerText = '登录'
-  loginBtn.onclick = login
-  $('#message').append(lUserNameInput)
-  $('#message').append(lPasswordInput)
-  $('#message').append(loginBtn)
-
-  let rUserNameInput = document.createElement('input')
-  let rPasswordInput = document.createElement('input')
-  let registerBtn = document.createElement('button')
-  rUserNameInput.id = 'rUserName'
-  rUserNameInput.className = 'inputMsg'
-  rUserNameInput.name = 'rUserName'
-  rUserNameInput.placeholder = '请输入用户名'
-  rUserNameInput.style.display = 'none'
-
-  rPasswordInput.id = 'rPassword'
-  rPasswordInput.className = 'inputMsg'
-  rPasswordInput.name = 'rPassword'
-  rPasswordInput.placeholder = '请输入密码'
-  rPasswordInput.style.display = 'none'
-
-  registerBtn.id = 'register'
-  registerBtn.className = 'log-btn'
-  registerBtn.style.display = 'none'
-  registerBtn.innerText = '注册'
-  registerBtn.onclick = login
-
-  $('#message').append(rUserNameInput)
-  $('#message').append(rPasswordInput)
-  $('#message').append(registerBtn)
+function showLogin (res) {
+  $('.logIn-bg').css('display', res ? 'block' : 'none')
+  $('#log').css('display', res ? 'block' : 'none')
+  $('#register-form').css('display', !res ? 'block' : 'none')
 }
+
+document.getElementById('login').onclick = login
+
+$('.select label').click(function () {
+  $(this).siblings('span').addClass('active')
+  $(this).parent().siblings('div').find('span').removeClass('active')
+})
 
 function showOneTab (res) {
   if (res) {
+    $('#log').css('height', '300px')
     $('#loginText').addClass('active-tab')
     $('#registerText').removeClass('active-tab')
   } else {
+    $('#log').css('height', '380px')
     $('#loginText').removeClass('active-tab')
     $('#registerText').addClass('active-tab')
   }
-  $('#lUserName').css('display', res ? 'block' : 'none')
-  $('#lPassword').css('display', res ? 'block' : 'none')
-  $('#login').css('display', res ? 'block' : 'none')
-  $('#rUserName').css('display', !res ? 'block' : 'none')
-  $('#rPassword').css('display', !res ? 'block' : 'none')
-  $('#register').css('display', !res ? 'block' : 'none')
+  $('#login-form').css('display', res ? 'block' : 'none')
+
+  $('#register-form').css('display', !res ? 'block' : 'none')
 }
 
 $('#loginText').click(function () {
@@ -88,6 +52,7 @@ $('#registerText').click(function () {
 })
 
 function login () {
+  console.log(1)
   $.ajax({
     type: 'GET',
     data: {
@@ -104,10 +69,11 @@ function login () {
         $('#userID')[0].innerText = msg[0].id
         $('#log').css('display', 'none')
         $('.logIn-bg').css('display', 'none')
+        $('.logIn-bg').css('opacity', '1')
+        index.getHistory()
       } else {
         console.log('用户名或密码错误')
       }
-      index.getHistory()
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       console.log(XMLHttpRequest.status)
@@ -118,8 +84,13 @@ function login () {
 }
 
 $('#portrait').click(function () {
-  $('.logIn-bg').css('display', 'block')
+  // $('.logIn-bg').css('display', 'block')
+  // $('.logIn-bg').css('opacity', '0.8')
   $('#edit-information').css('display', 'block')
+})
+
+$('#close').click(function () {
+  $('#edit-information').css('display', 'none')
 })
 
 $('#input').focus(function () {
@@ -130,11 +101,23 @@ $('#input').blur(function () {
   $('#current').css('background', '#f5f5f5')
 })
 
-$('#logIn').click(function () {
-  $('.logIn-bg').css('display', 'block')
-  $('#log').css('display', 'block')
-  $('#loginText').addClass('active-tab')
-  if ($('#lPassword').length < 1) {
-    createLogin()
-  }
+$('#signUp').click(function () {
+  confirm('确认注销？').then(_ => {
+    $.ajax({
+      type: 'POST',
+      url: 'http://39.108.221.165:3000/signUp',
+      data: {
+        userID: $('#userID')[0].innerText
+      },
+      dataType: 'json',
+      success: function (msg) {
+        showLogin(true)
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log(XMLHttpRequest.status)
+        console.log(XMLHttpRequest.readyState)
+        console.log(textStatus)
+      }
+    })
+  })
 })
