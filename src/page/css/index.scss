@@ -183,7 +183,7 @@ html, body {
 #log {
   background: #fff;
   width: 280px;
-  height: 320px;
+  height: 290px;
   display: none;
   z-index: 10;
   position: fixed;
@@ -231,13 +231,6 @@ html, body {
   #message {
     margin: auto;
     text-align: center;
-    // .sex .male,
-    // .sex .female {
-    //   width: 30px;
-    //   height: 30px;
-    //   line-height: 30px;
-    //   text-align: center;
-    // }
     #rUserName {
       width: 120px;
     }
@@ -246,7 +239,6 @@ html, body {
       float: right;
       font-size: 16px;
       border: none;
-      padding: 10px 10px 10px 0;
       outline: none;
       margin: 28px 16px 0 -24px;
       input {
@@ -306,7 +298,6 @@ html, body {
     }
     .inputdate {
       color: #4e4e4e;
-      // width: 80px;
       font-size: 16px;
       border: none;
       border-bottom: 1px solid #000;
@@ -320,10 +311,11 @@ html, body {
       border-bottom: 1px solid #000;
       padding: 10px;
       outline: none;
-      margin: 30px auto 0 auto ;
+      margin: 30px auto 0 auto;
     }
     .log-btn {
       margin: 40px auto 0 auto;
+      outline: none;
       width: 220px;
       height: 38px;
       color: #fff;

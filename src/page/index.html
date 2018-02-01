@@ -79,26 +79,27 @@
             <button type="button" id="login" class="log-btn">登录</button>
           </form>
           <form id ='register-form' action="">
-            <input id="rUserName" class="inputMsg" type="text" placeholder = '请输入用户名'>
-            <div class="sex">
-              <div class="select">
-                <div class="male">
-                  <label for="male">                        
-                    <input type="radio" name="sex" id="male" checked>
-                  </label>
-                  <span class="btn active">男</span>
+              <div class="sex">
+                  <div class="select">
+                    <div class="male">
+                      <label for="male">                        
+                        <input type="radio" name="sex" id="male" value="male" checked />
+                      </label>
+                      <span class="btn active">男</span>
+                    </div>
+                    <div class="female">
+                      <label for="female">
+                        <input type="radio" name="sex" value="female" id="female" />
+                      </label>
+                      <span class="btn">女</span>
+                    </div>                    
+                  </div>         
                 </div>
-                <div class="female">
-                  <label for="female">
-                    <input type="radio" name="sex" id="female">
-                  </label>
-                  <span class="btn">女</span>
-                </div>                    
-              </div>         
-            </div>
+            <input id="rUserName" class="inputMsg" type="text" placeholder = '请输入用户名'>
             <input id="rPassword" class="inputMsg" type="password" placeholder = '请输入密码'>
-            <br/>
-            生日
+            <input id="rCheckPassword" class="inputMsg" type="password" placeholder = '请再次输入密码'>
+            <p></p>
+            <span>生日</span>
             <input id="bornTime" class="inputdate" type="date">
             <button type="button" id="register" class="log-btn">注册</button>
           </form>

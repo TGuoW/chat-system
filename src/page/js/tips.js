@@ -1,7 +1,7 @@
 export default function (msg) {
   return new Promise(function (resolve, reject) {
-    let bg = document.createElement('div')
-    bg.style.cssText = 'position:fixed; z-index:20; width:500px; height:auto; background:#fff; top:100px; left:0; right: 0; margin: 0 auto;border: 1px solid #9c9c9c; box-shadow:0 0 10px #888888; border-radius:5px;'
+    let div = document.createElement('div')
+    div.style.cssText = 'position:fixed; z-index:20; width:500px; height:auto; background:#fff; top:200px; left:0; right: 0; margin: 0 auto;border: 1px solid #9c9c9c; box-shadow:0 0 10px #888888; border-radius:5px;'
 
     let title = document.createElement('div')
     title.innerText = '提示'
@@ -9,6 +9,7 @@ export default function (msg) {
 
     let closeThis = function () {
       bg.remove()
+      resolve()
     }
 
     let close = document.createElement('span')
@@ -25,7 +26,6 @@ export default function (msg) {
 
     let btnGroup = document.createElement('div')
     let enterBtn = document.createElement('button')
-    let cancelBtn = document.createElement('button')
     btnGroup.style.cssText = 'width:100%; height:50px;'
 
     let btnStyle = 'outline:none;margin:10px;padding: 4px 20px;float:right;border:none;cursor:pointer;'
@@ -38,27 +38,18 @@ export default function (msg) {
     enterBtn.onmouseout = function () {
       enterBtn.style.background = '#09bb07'
     }
-    enterBtn.onclick = function () { // resolve
-      resolve()
-      closeThis()
-    }
+    enterBtn.onclick = closeThis // resolve
 
-    cancelBtn.innerText = '取消'
-    cancelBtn.type = 'button'
-    cancelBtn.style.cssText = btnStyle + 'background:#e7e7e7;color:#000'
-    cancelBtn.onmouseover = function () {
-      cancelBtn.style.background = '#d2d2d2'
-    }
-    cancelBtn.onmouseout = function () {
-      cancelBtn.style.background = '#e7e7e7'
-    }
-    cancelBtn.onclick = closeThis
-    btnGroup.appendChild(cancelBtn)
     btnGroup.appendChild(enterBtn)
 
-    bg.appendChild(title)
-    bg.appendChild(confirmText)
-    bg.appendChild(btnGroup)
+    div.appendChild(title)
+    div.appendChild(confirmText)
+    div.appendChild(btnGroup)
+
+    let bg = document.createElement('div')
+    bg.id = 'asdasd'
+    bg.style.cssText = 'position:fixed; z-index:20; height:100%; width:100%; top:0;'
+    bg.appendChild(div)
     document.body.appendChild(bg)
   })
 }
